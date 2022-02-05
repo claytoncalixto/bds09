@@ -13,3 +13,7 @@
   color: #407bff;
   margin-left: 10px;
 }
+
+.nav-login-logout a {
+  display: unset;
+}

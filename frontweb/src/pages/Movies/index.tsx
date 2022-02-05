@@ -33,28 +33,12 @@ const Movies = () => {
     <div className="container my-4 movie-container">
       <div className="row movie-title-container">
         <h1>Tela listagem de filmes</h1>
-      </div>
+      </div >
+      <>
+        <Link to="/movies/1">Acessar /movies/1</Link> <br/>
 
-      <div className="container link">
-        {isLoading ? (
-          <MovieLoader />
-        ) : (
-          page?.content.map((movie) => (
-            <div className="col-sm-6 col-lg-4 col-xl-3 link-movies" key={movie.id}>
-              <>
-              <Link to="/movies/1">
-                <h6>Acessar /movies/1 </h6>
-                <MovieCard movie={movie} />
-              </Link>
-              <Link to="/movies/2">
-                <h6>Acessar /movies/2</h6>
-                <MovieCard movie={movie} />
-              </Link>
-              </>
-            </div>
-          ))
-        )}
-      </div>
+        <Link to="/movies/2">Acessar /movies/2</Link>
+      </>
     </div>
   );
 };

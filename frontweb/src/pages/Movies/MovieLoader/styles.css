@@ -1,3 +1,13 @@
 .card-loader-container {
     display: flex;
 }
+
+
+.nav-login-logout {
+    display: unset;
+  }
+
+  
+  .nav-login-logout a {
+    display: unset;
+  }

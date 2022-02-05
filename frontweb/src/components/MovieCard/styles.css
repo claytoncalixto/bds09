@@ -21,3 +21,7 @@
   font-size: 18px;
   color: #263238;
 }
+
+.nav-login-logout a {
+  display: unset;
+}

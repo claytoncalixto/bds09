@@ -39,7 +39,6 @@ const Navbar = () => {
         <Link to="/" className="nav-logo-text">
           <h4>MovieFlix</h4>
         </Link>
-        
 
         <div className="collapse navbar-collapse" id="dscatalog-navbar">
           <ul className="navbar-nav offset-md-2 main-menu">
@@ -56,18 +55,12 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="nav-login-logout">
-          {authContextData.authenticated ? (
-            <>
-              <span className="nav-username">
-                {authContextData.tokenData?.user_name}
-              </span>
-              <a href="#logout" onClick={handleLogoutClick}>
-                LOGOUT
-              </a>
-            </>
-          ) : (
-            <Link to="/admin/auth/login">Sair</Link>
+
+        <div className="container nav-login-logout">
+          { authContextData.authenticated ? (
+            <a href="/admin/auth/login" onClick={handleLogoutClick}>Sair</a>
+          ):(
+            <Link to="/admin/auth/login" onClick={handleLogoutClick}>Sair</Link>
           )}
         </div>
       </div>

@@ -4,7 +4,7 @@
   padding: 20px;
 }
 
-.nav-login-logout a{
+.nav-login-logout {
   display: none;
   border:none;
 }

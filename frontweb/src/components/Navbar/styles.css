@@ -5,7 +5,7 @@
 
 .nav-logo-text,
 .nav-logo-text:hover {
-  color: #fff;
+  color: black;
 }
 
 .main-menu {
@@ -41,14 +41,26 @@
     width: 97px;
     height: 30px;
     display: unset;
-    color: #fff;
-    padding: 5px, 15px, 5px, 15px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #000000;
+  }
+
+  .nav-login-logout a {
+    display: unset;
+    font-weight: 700;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
   }
 }
 
 @media (min-width: 768px) {
-  .nav-login-logout {
-    display: unset;
+  .nav-login-logout Link {
+    border: 1px solid #000000;
   }
 }
 
