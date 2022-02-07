@@ -11,10 +11,6 @@ const Users = () => {
     const params : AxiosRequestConfig = {
       url: '/users',
       withCredentials: true,
-      params: {
-        page: 0,
-        size: 12,
-      },
     };
  
     requestBackend(params).then((response) => {
@@ -25,7 +21,7 @@ const Users = () => {
   return (
     <div>
       {page?.content.map((item) => (
-        <p key={item.id}>{item.email}</p>
+        <p key={item.id}>{item.email}{item.name}</p>
       ))}
     </div>
   );

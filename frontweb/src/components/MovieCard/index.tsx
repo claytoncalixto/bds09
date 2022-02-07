@@ -1,24 +1,38 @@
-import MoviePrice from 'components/MoviePrice';
-import { Movie } from 'types/movie';
+import ButtonIcon from 'components/ButtonIcon';
+import { useForm } from 'react-hook-form';
 
 import './styles.css';
 
-type Props = {movie : Movie;}
+type FormData = {
+  description: string;
+};
 
-const MovieCard = ({ movie } : Props) => {
+const MovieCard = () => {
+
+  const { register, handleSubmit } = useForm<FormData>();
+
+  const onSubmit = (formData: FormData) => {
+   console.log(formData.description); 
+  formData.description.toString();     
+     
+  };
+
   return (
-    <div className="base-card movie-card">
-      <div className="card-top-container">
-          
-          <h6>Acessar /movies/1 </h6> {movie.id}
-          <h6>Acessar /movies/2 </h6> {movie.id}
-      </div>
-      <div className="card-bottom-container">
-          <h6>{ movie.name}</h6>
-          <MoviePrice price={movie.price} />
-      </div>
+    <div className="text-insert-conatiner">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+        {...register('description')}
+          className="form-control"
+          type="text"
+          placeholder="Deixe sua avaliação aqui"
+          name="description"
+        />
+        <div className="btn-save-submit">
+          <ButtonIcon text="SALVAR AVALIAÇÃO" />
+        </div>
+      </form>
     </div>
   );
-}
+};
 
 export default MovieCard;

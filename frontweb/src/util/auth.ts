@@ -5,6 +5,7 @@ export type Role = 'ROLE_VISITOR' | 'ROLE_MEMBER';
 
 export type TokenData = {
   exp: number;
+  name: string;
   user_name: string;
   authorities: Role[];
 };
@@ -27,7 +28,7 @@ export const hasAnyRoles = (roles: Role[]): boolean => {
     return true;
   }
 
-  const tokenData = getTokenData();
+ const tokenData = getTokenData();
 
   if (tokenData !== undefined) {
     //Essa forma para verificar se o usuário possui alguma Role
