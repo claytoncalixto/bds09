@@ -6,6 +6,12 @@
 
 .nav-login-logout {
   display: none;
+  border: none;
+}
+
+.nav-login-logout a {
+  display: none;
+  border: none;
 }
 
 .base-input {
@@ -61,6 +67,16 @@
   @media (min-width: 576px){
       .login-card {
           padding: 50px;
+      }
+
+      .nav-login-logout {
+        display: none;
+        border: none;
+      }
+      
+      .nav-login-logout a {
+        display: none;
+        border: none;
       }
 
   }

@@ -49,7 +49,7 @@ const MovieDetails = () => {
       <div className="base-card movie-details-card">
         <h2>Tela detalhes do filme id: {moviesId}</h2>
         <div className="colunm">
-          { hasAnyRoles (['ROLE_MEMBER']) && (
+          { !hasAnyRoles (['ROLE_VISITOR']) && (
             <>              
 
               <div className="text-insert-conatiner">

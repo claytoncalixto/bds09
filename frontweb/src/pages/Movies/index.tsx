@@ -32,10 +32,10 @@ const Movies = () => {
           history.replace('/movies')
         ) : (
           <>
-            <Link to="/movies/1">Acessar /movies/1</Link> <br />
+            <Link to="/movies/1">Acessar /movies/1.</Link> <br />
             <Link to="/movies/2">Acessar /movies/2</Link>
           </>
-        )};
+        )}.
       </div>
     </div>
   );

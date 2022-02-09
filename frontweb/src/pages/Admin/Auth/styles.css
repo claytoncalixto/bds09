@@ -22,11 +22,31 @@
   .auth-form-container {
     width: 480px;
   }
+
+  .nav-login-logout {
+    display: none;
+    border: none;
+  }
+  
+  .nav-login-logout a {
+    display: none;
+    border: none;
+  }
 }
 
 @media (min-width: 768px) {
   .auth-form-container {
     width: 550px;
+  }
+
+  .nav-login-logout {
+    display: none;
+    border: none;
+  }
+  
+  .nav-login-logout a {
+    display: none;
+    border: none;
   }
 }
 
@@ -65,6 +85,16 @@
   .auth-banner-container svg {
       width: 100%;
   } 
+
+  .nav-login-logout {
+    display: none;
+    border: none;
+  }
+  
+  .nav-login-logout a {
+    display: none;
+    border: none;
+  }
 }
 
 @media (min-width: 1400px) {  
@@ -80,6 +110,16 @@
   
     .auth-banner-container p {
       font-size: 24px;
+    }
+
+    .nav-login-logout {
+      display: none;
+      border: none;
+    }
+    
+    .nav-login-logout a {
+      display: none;
+      border: none;
     }
   
   }

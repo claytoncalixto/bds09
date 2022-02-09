@@ -5,20 +5,41 @@
 
 .nav-login-logout {
   display: none;
+  border: none;
 }
 
 .admin-content {
   padding: 20px;
 }
-.nav-login-logout {
+.nav-login-logout a {
   display: none;
-  border-color: none;
+  border: none;
 }
 
 @media (min-width: 576px) {
+
+  .nav-login-logout {
+    display: none;
+    border: none;
+  }
+  
+  .nav-login-logout a {
+    display: none;
+    border: none;
+  }
 }
 
 @media (min-width: 768px) {
+
+  .nav-login-logout {
+    display: none;
+    border: none;
+  }
+  
+  .nav-login-logout a {
+    display: none;
+    border: none;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -28,5 +49,15 @@
 
   .admin-content {
     flex: 0;
+  }
+
+  .nav-login-logout {
+    display: none;
+    border: none;
+  }
+  
+  .nav-login-logout a {
+    display: none;
+    border: none;
   }
 }
