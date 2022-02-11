@@ -9,12 +9,11 @@ import ButtonIcon from 'components/ButtonIcon';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 
-
 import './styles.css';
-
-
+import MovieCard from 'components/MovieCard';
 
 type FormData = {
+  name: string;
   description: string;
 };
 
@@ -29,10 +28,21 @@ const MovieDetails = () => {
 
   const { register, handleSubmit } = useForm<FormData>();
 
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    description: '',
+  });
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    setFormData({ ...formData, [name]: value });
+  };
 
   const onSubmit = (formData: FormData) => {
-   console.log(formData.description); 
-  formData.description.toString();          
+    console.log(formData.description);
+    formData.description.toString();
   };
 
   useEffect(() => {
@@ -49,9 +59,8 @@ const MovieDetails = () => {
       <div className="base-card movie-details-card">
         <h2>Tela detalhes do filme id: {moviesId}</h2>
         <div className="colunm">
-          { !hasAnyRoles (['ROLE_VISITOR']) && (
-            <>              
-
+          {!hasAnyRoles(['ROLE_VISITOR']) && (
+            <>
               <div className="text-insert-conatiner">
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <input
@@ -60,28 +69,26 @@ const MovieDetails = () => {
                     type="text"
                     placeholder="Deixe sua avaliação aqui"
                     name="description"
+                    value={formData.description}
+                    onChange={handleChange}
                   />
                   <div className="btn-save-submit">
                     <ButtonIcon text="SALVAR AVALIAÇÃO" />
                   </div>
                 </form>
               </div>
-              </>
+            </>
           )}
 
-              <div className="movie-details-loader">
-                <div className="name-container">
-                  <div className="row star-movie-name">
-                    <span>
-                      <Start /> Nome: {Users.name}
-                    </span>
-                  </div>
-                  <div className="description-container">
-                    <p>{movie?.description}</p>
-                  </div>
-                </div>
+          <div className="movie-details-loader">            
+            <div className="name-container" key={movie?.id}>
+            <Start  /> {formData.name}
+              <div className="row star-movie-name"></div>
+              <div className="description-container">
+                <MovieCard description={formData.description} />
               </div>
-           
+            </div>
+          </div>
         </div>
       </div>
     </div>
