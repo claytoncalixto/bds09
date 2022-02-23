@@ -15,6 +15,11 @@ type LoginData = {
     password: string;
 }
 
+type EvaluationData = {
+  movieId: number;
+  text: string;
+};
+
 export const requestBackendLogin = (loginData : LoginData) => {
 
     const headers = {
@@ -58,3 +63,19 @@ axios.interceptors.response.use(function (response) {
     //
     return Promise.reject(error)
   });
+
+  export const requestPostEvaluation = (evaluationData: EvaluationData) => {
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + getAuthData().access_token,
+    };
+  
+    return axios({
+      method: 'POST',
+      baseURL: BASE_URL,
+      url: '/reviews',
+      data: evaluationData,
+      headers,
+      withCredentials: true,
+    });
+  };

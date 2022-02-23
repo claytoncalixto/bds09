@@ -21,7 +21,7 @@ type LocationState = {
 const Login = () => {
   const location = useLocation<LocationState>();
 
-  const { from } = location.state || { from: { pathname: '/admin' } };
+  const { from } = location.state || { from: { pathname: '/movies' } };
 
   const { setAuthContextData } = useContext(AuthContext);
 
@@ -98,10 +98,8 @@ const Login = () => {
         <Link to="/admin/auth/recover" className="login-link-recover">
           Esqueci a senha
         </Link>
-        <div className="login-submit">
-          <Link to="/movies">
-            <ButtonIcon text="Fazer login" />
-          </Link>
+        <div className="login-submit">          
+            <ButtonIcon text="Fazer login" />          
         </div>
         <div className="signup-container">
           <span className="not-registered">Não tem Cadastro?</span>

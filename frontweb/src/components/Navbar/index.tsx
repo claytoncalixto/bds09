@@ -1,5 +1,5 @@
 import 'bootstrap/js/src/collapse.js';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getTokenData, isAuthenticated } from 'util/auth';
 import React, { useContext, useEffect } from 'react';
 import history from 'util/history';
@@ -39,30 +39,16 @@ const Navbar = () => {
         <Link to="/" className="nav-logo-text">
           <h4>MovieFlix</h4>
         </Link>
-
-        <div className="collapse navbar-collapse" id="dscatalog-navbar">
-          <ul className="navbar-nav offset-md-2 main-menu">
-            <li>
-              <NavLink to="/" activeClassName="active" exact>
-                <Link to="/admin/auth/login"></Link>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/movies" activeClassName="active"></NavLink>
-            </li>
-            <li>
-              <NavLink to="/admin" activeClassName="active"></NavLink>
-            </li>
-          </ul>
-        </div>
-
-        <div className="container nav-login-logout">
-          { authContextData.authenticated ? (
-            <a href="/admin/auth/login" onClick={handleLogoutClick}>Sair</a>
-          ):(
-            <Link to="/admin/auth/login" onClick={handleLogoutClick}>Sair</Link>
-          )}
-        </div>
+        {authContextData.authenticated && (
+          <div className="container nav-login-logout">
+            <div>
+              <a href="/admin/auth/login" onClick={handleLogoutClick}>
+                Sair
+              </a>
+            </div>
+          </div>
+        )}
+        ;
       </div>
     </nav>
   );

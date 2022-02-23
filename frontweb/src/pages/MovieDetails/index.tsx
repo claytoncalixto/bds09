@@ -4,13 +4,14 @@ import { useParams } from 'react-router-dom';
 import { Movie } from 'types/movie';
 import { BASE_URL } from 'util/requests';
 import { hasAnyRoles } from 'util/auth';
-import Users from 'pages/Admin/User';
 import ButtonIcon from 'components/ButtonIcon';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
+import Evaluation from 'components/Evaluation';
+import CommentDetails from 'components/CommentDetails';
+import MovieCard from 'components/MovieCard';
 
 import './styles.css';
-import MovieCard from 'components/MovieCard';
 
 type FormData = {
   name: string;
@@ -41,8 +42,18 @@ const MovieDetails = () => {
   };
 
   const onSubmit = (formData: FormData) => {
-    console.log(formData.description);
-    formData.description.toString();
+    <>
+      <div className="movie-details-loader">
+        <div className="name-container" key={movie?.id}>
+          <Start /> {formData.name}
+          <div className="row star-movie-name"></div>
+          <div className="description-container">
+            <MovieCard description={formData.description} /> <br />
+            <CommentDetails name={formData.name} text={formData.description} />
+          </div>
+        </div>
+      </div>
+    </>;
   };
 
   useEffect(() => {
@@ -59,7 +70,7 @@ const MovieDetails = () => {
       <div className="base-card movie-details-card">
         <h2>Tela detalhes do filme id: {moviesId}</h2>
         <div className="colunm">
-          {!hasAnyRoles(['ROLE_VISITOR']) && (
+          {hasAnyRoles(['ROLE_MEMBER']) && <Evaluation movieId={moviesId} /> ? (
             <>
               <div className="text-insert-conatiner">
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -78,18 +89,11 @@ const MovieDetails = () => {
                 </form>
               </div>
             </>
+          ) : (
+            <CommentDetails name={formData.name} text={formData.description} />
           )}
-
-          <div className="movie-details-loader">            
-            <div className="name-container" key={movie?.id}>
-            <Start  /> {formData.name}
-              <div className="row star-movie-name"></div>
-              <div className="description-container">
-                <MovieCard description={formData.description} />
-              </div>
-            </div>
-          </div>
         </div>
+        <CommentDetails name={formData.name} text={formData.description} />
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const Movies = () => {
         <h1>Tela listagem de filmes</h1>
       </div>
       <div>
-        {authContextData.authenticated ? (
+        {!authContextData.authenticated ? (
          
           history.replace('/movies')
         ) : (
