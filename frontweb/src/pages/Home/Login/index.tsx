@@ -59,7 +59,7 @@ const Login = () => {
         <div className="alert alert-danger">Erro ao tentar efetuar o login</div>
       )}
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mb-4">
+        <div className="mb-2">
           <input
             {...register('username', {
               required: 'Campo obrigatório',

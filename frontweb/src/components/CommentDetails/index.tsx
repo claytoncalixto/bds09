@@ -10,7 +10,8 @@ const CommentDetails = ({ name, text }: Props) => {
   return (
     <div className="comment-details-container">
       <div className="comment-details-header">
-        <Star /><h1>{name}</h1>
+        <Star />
+        <h1>{name}</h1>
       </div>
       <div className="comment-details-card">
         <p>{text}</p>

@@ -40,15 +40,15 @@ const Navbar = () => {
           <h4>MovieFlix</h4>
         </Link>
         {authContextData.authenticated && (
-          <div className="container nav-login-logout">
-            <div>
-              <a href="/admin/auth/login" onClick={handleLogoutClick}>
+          <div className="nav-logout">
+            <div className="nav-label">
+              <a href="#logout" onClick={handleLogoutClick}>
                 Sair
               </a>
             </div>
           </div>
         )}
-        ;
+        
       </div>
     </nav>
   );

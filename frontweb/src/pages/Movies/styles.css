@@ -1,80 +1,38 @@
 .movie-container {
-  font-size: 18px;
-  color: #ffff;
-}
-
-.movie-container Link {
-  width: 397px;
-  height: 33px;
-  margin-left: 40px;
-  margin-top: 40px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 33px;
-  letter-spacing: -0.015em;
+  margin-top: 15px;
+  margin-left: 15px;
   color: #ffffff;
 }
 
-.movie-title-container {
-  margin-bottom: 20px;
-}
-
-.movie-title-container h1 {
-  width: 647px;
-  height: 65px;
-  margin-top: 40px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 65px;
-  letter-spacing: -0.015em;
-  color: #ffff;
-  line-height: 25px;
-  letter-spacing: -0.015em;
-}
-
-.container-link {
-  color: #ffff;
-}
-
-.link-movies {
-  display: unset;
-  width: 397px;
-  height: 33px;
-  margin-left: 40px;
-  margin-top: 213px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
+.movie-container h1 {
   font-size: 24px;
-  line-height: 33px;
-  letter-spacing: -0.015em;
-  color: #ffff;
 }
 
-@media (min-width: 576px) {
-  .movie-container {
-    font-size: 30px;
+.movie-list-container {
+  margin-top: 40px;
+}
+
+.movie-list-container ul {
+  font-size: 18px;
+  list-style-type: none;
+  padding-left: 0px;
+  font-style: normal;
+}
+
+.movie-list-container li {
+  padding-bottom: 12px;
+}
+
+@media (min-width: 992px) {
+  .movie-container h1 {
+    font-size: 48px;
   }
 
-  .nav-login-logout {
-    width: 97px;
-    height: 30px;
-    display: unset; 
-    color: #000000;   
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 10px;
-  }
-  
-  .nav-login-logout a{
-    display: unset;
+  .movie-list-container ul {
+    font-size: 24px;
   }
 
-  .nav-login-logout p {
-    color: #000000;
+  .movie-list-container li {
+    padding-bottom: 27px;
   }
 }

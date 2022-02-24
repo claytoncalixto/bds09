@@ -5,8 +5,8 @@ type Props = { text: string;}
 
 const ButtonIcon = ({text}:Props) => {
   return (
-    <div className="btn-container">
-      <button className="btn btn-primary">
+    <div className="btn-normal-container">
+      <button className="btn-normal btn-primary">
         <h6>{text}</h6>
       </button>   
     </div>
